@@ -1,0 +1,15 @@
+{
+  "note": "test-only key and nonce; a real capture uses a random key and nonce",
+  "key_base64url": "gIGCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXmJmam5ydnp8",
+  "store_id": "EBESExQVFhcYGRobHB0eHw",
+  "request_body_base64url": "eyJtb2RlbCI6InRlc3QiLCJtZXNzYWdlcyI6W3sicm9sZSI6InVzZXIiLCJjb250ZW50IjoicGluZyJ9XX0",
+  "response_body_base64url": "eyJvayI6dHJ1ZX0",
+  "plaintext": "{\"version\":\"verirelay-raw-capture-plaintext/1\",\"request_body\":\"eyJtb2RlbCI6InRlc3QiLCJtZXNzYWdlcyI6W3sicm9sZSI6InVzZXIiLCJjb250ZW50IjoicGluZyJ9XX0\",\"response_body\":\"eyJvayI6dHJ1ZX0\"}",
+  "aad": "verirelay-raw-capture/1:EBESExQVFhcYGRobHB0eHw",
+  "capture": {
+    "version": "verirelay-raw-capture/1",
+    "algorithm": "AES-256-GCM",
+    "nonce": "ICEiIyQlJicoKSor",
+    "ciphertext": "4Jyt4SRL2Yd_QzCfKGHmOk7CyJ6RvB0lORTR8jwwAu0FLSNrIJ9pWWs9J9cs7yopnSYLgFC9zpMKP-ezTDmrshaSyQodjxUHdr1_VGPY0R8hGlyT62F8IbB_2BJs_a5W4f0tgGCG-RRE7vOOzSeGQ9e1OzXxBpiiGHCW08imRN0Sua54RxBv4omTF9_x6eQm3xERu0_EiNZ4s3a6q9a-o9uG0LR2Ox0dB0PmDd0e8r2aSM6c1OVtPPukxpOfvVWAWan2xd9_"
+  }
+}

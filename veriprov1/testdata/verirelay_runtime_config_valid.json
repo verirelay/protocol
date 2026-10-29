@@ -1,0 +1,19 @@
+{
+  "version": "verirelay-runtime-config/1",
+  "admin_token": "test-only-admin-token",
+  "receipt_store": {
+    "type": "redis",
+    "addr": "redis.internal.example:6379",
+    "tls": true,
+    "username": "verirelay",
+    "password": "test-only-redis-password",
+    "db": 0,
+    "key_prefix": "verirelay:",
+    "ttl_seconds": 3600
+  },
+  "raw_store": {
+    "type": "memory",
+    "max_ttl_seconds": 86400,
+    "max_bytes": 268435456
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["challenge_id", "nonce", "issued_at", "expires_at", "ttl_seconds"],
+  "properties": {
+    "challenge_id": { "type": "string", "minLength": 22 },
+    "nonce": { "type": "string", "minLength": 43, "maxLength": 43 },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "ttl_seconds": { "type": "integer", "minimum": 1 }
+  }
+}

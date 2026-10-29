@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["version", "challenge_id", "enc", "ciphertext", "aad", "signature"],
+  "properties": {
+    "version": { "const": "veriprov/1" },
+    "challenge_id": { "type": "string", "minLength": 22 },
+    "enc": { "type": "string", "minLength": 43, "maxLength": 43 },
+    "ciphertext": { "type": "string", "minLength": 1 },
+    "aad": {
+      "type": "object",
+      "required": ["protocol", "challenge_id"],
+      "properties": {
+        "protocol": { "const": "veriprov/1" },
+        "challenge_id": { "type": "string", "minLength": 22 }
+      }
+    },
+    "signature": { "type": "string", "minLength": 86, "maxLength": 86 }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "note": "test-only private key; generated once for Open compatibility verification",
+  "recipient_private_key_base64url": "6IJKkUEZZF4Wm7iRgqu7lx5aWPkT4nT2MZ2-8wJDlEg",
+  "recipient_public_key_base64url": "l-dOEJx-9F2KsaVLE4ZAaMZXGi4MtLHqlzKIxDqEkhc",
+  "aad": {"protocol":"veriprov/1","challenge_id":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"},
+  "enc_base64url": "xmvKg0Dwc8Xkb0iic-gZPRxLZnljLt4yKCOp2zIBtVk",
+  "ciphertext_base64url": "Fnp9tiaVVKnri2otjtqs0n_PRo_tyDRfzyZQ59wgP035onVWaEFACg",
+  "plaintext_base64url": "dGVzdC1vbmx5IHJ1bnRpbWUgY29uZmln"
+}

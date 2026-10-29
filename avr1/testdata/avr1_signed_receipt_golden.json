@@ -1,0 +1,84 @@
+{
+  "name": "avr1-ed25519-jcs-happy-path",
+  "description": "Deterministic avr/1 signed receipt vector using an unattested test key derived from the ASCII seed 0123456789abcdef0123456789abcdef.",
+  "input_json": {
+    "version": "avr/1",
+    "canonicalization": "jcs-rfc8785",
+    "signature_algorithm": "ed25519",
+    "hash_algorithm": "sha256",
+    "request_id": "req_01HYW7WZ7JQ7J7Y4ZK6KJ9Q2R3",
+    "timestamp": "2026-07-11T07:00:00Z",
+    "method": "POST",
+    "upstream_authority": "api.example.com",
+    "upstream_path": "/v1/chat/completions?version=1",
+    "request_body_sha256": "5339e1178cb073b7060b8c080f1c168206458b4710dbae77d3e8b236987945d9",
+    "response_body_sha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93",
+    "response_status": 200,
+    "upstream_tls": {
+      "sni": "api.example.com",
+      "spki_sha256": "6feecc8c16c5551d9feb3eb5f77e2da773bf68bd9ef9c52927ceb2c86e56892b"
+    },
+    "service_public_key": "I7xUkSwebpLEqGglyGfif_3FVb_71CRPF6Jqv__ull0",
+    "key_id": "fb7970219e26d1f4",
+    "signature": {
+      "payload_sha256": "715e25e8a649e5a6573b4ee7dad4c22ed044e632e51536899dedcbf9ef43acc0",
+      "value": "-j99isWTNjGykStB9ZBXRCBNyy1UCXsHr-3h8Hr4e8HXiseazZDNK5FAMAmcohp9I_iCeTcTIzOyouymGmdfAA"
+    }
+  },
+  "reordered_json": {
+    "signature": {
+      "value": "-j99isWTNjGykStB9ZBXRCBNyy1UCXsHr-3h8Hr4e8HXiseazZDNK5FAMAmcohp9I_iCeTcTIzOyouymGmdfAA",
+      "payload_sha256": "715e25e8a649e5a6573b4ee7dad4c22ed044e632e51536899dedcbf9ef43acc0"
+    },
+    "upstream_tls": {
+      "spki_sha256": "6feecc8c16c5551d9feb3eb5f77e2da773bf68bd9ef9c52927ceb2c86e56892b",
+      "sni": "api.example.com"
+    },
+    "upstream_path": "/v1/chat/completions?version=1",
+    "upstream_authority": "api.example.com",
+    "timestamp": "2026-07-11T07:00:00Z",
+    "signature_algorithm": "ed25519",
+    "service_public_key": "I7xUkSwebpLEqGglyGfif_3FVb_71CRPF6Jqv__ull0",
+    "response_status": 200,
+    "response_body_sha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93",
+    "request_id": "req_01HYW7WZ7JQ7J7Y4ZK6KJ9Q2R3",
+    "request_body_sha256": "5339e1178cb073b7060b8c080f1c168206458b4710dbae77d3e8b236987945d9",
+    "method": "POST",
+    "key_id": "fb7970219e26d1f4",
+    "hash_algorithm": "sha256",
+    "canonicalization": "jcs-rfc8785",
+    "version": "avr/1"
+  },
+  "canonical_payload": "{\"canonicalization\":\"jcs-rfc8785\",\"hash_algorithm\":\"sha256\",\"key_id\":\"fb7970219e26d1f4\",\"method\":\"POST\",\"request_body_sha256\":\"5339e1178cb073b7060b8c080f1c168206458b4710dbae77d3e8b236987945d9\",\"request_id\":\"req_01HYW7WZ7JQ7J7Y4ZK6KJ9Q2R3\",\"response_body_sha256\":\"4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93\",\"response_status\":200,\"service_public_key\":\"I7xUkSwebpLEqGglyGfif_3FVb_71CRPF6Jqv__ull0\",\"signature_algorithm\":\"ed25519\",\"timestamp\":\"2026-07-11T07:00:00Z\",\"upstream_authority\":\"api.example.com\",\"upstream_path\":\"/v1/chat/completions?version=1\",\"upstream_tls\":{\"sni\":\"api.example.com\",\"spki_sha256\":\"6feecc8c16c5551d9feb3eb5f77e2da773bf68bd9ef9c52927ceb2c86e56892b\"},\"version\":\"avr/1\"}",
+  "payload_sha256": "715e25e8a649e5a6573b4ee7dad4c22ed044e632e51536899dedcbf9ef43acc0",
+  "service_public_key": "I7xUkSwebpLEqGglyGfif_3FVb_71CRPF6Jqv__ull0",
+  "key_id": "fb7970219e26d1f4",
+  "signature": "-j99isWTNjGykStB9ZBXRCBNyy1UCXsHr-3h8Hr4e8HXiseazZDNK5FAMAmcohp9I_iCeTcTIzOyouymGmdfAA",
+  "expected_verification": "valid",
+  "negative_cases": [
+    {
+      "expected": "invalid",
+      "field": "timestamp",
+      "name": "non_utc_timestamp",
+      "value": "2026-07-11T15:00:00+08:00"
+    },
+    {
+      "expected": "invalid",
+      "field": "method",
+      "name": "tamper_method",
+      "value": "GET"
+    },
+    {
+      "expected": "invalid",
+      "field": "upstream_authority",
+      "name": "tamper_authority",
+      "value": "api.other.example"
+    },
+    {
+      "expected": "unsupported",
+      "field": "version",
+      "name": "unknown_version",
+      "value": "avr/2"
+    }
+  ]
+}

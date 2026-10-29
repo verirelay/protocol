@@ -1,0 +1,17 @@
+{
+  "note": "test-only identity key; the envelope is the one in hpke_golden.json",
+  "identity_private_key_seed_base64url": "QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl8",
+  "identity_public_key_base64url": "JUO5L_EJVRFHatyDadtt3JM2ZaEZeN2hQE7hBmypVZ0",
+  "envelope": {
+    "version": "veriprov/1",
+    "challenge_id": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+    "enc": "xmvKg0Dwc8Xkb0iic-gZPRxLZnljLt4yKCOp2zIBtVk",
+    "ciphertext": "Fnp9tiaVVKnri2otjtqs0n_PRo_tyDRfzyZQ59wgP035onVWaEFACg",
+    "aad": {
+      "protocol": "veriprov/1",
+      "challenge_id": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8"
+    },
+    "signature": "NoB82W0KqpVBKJ8mnvw0gIVqqXKjSQLbOCOay3rsvPnKvkpKUP5d27QMlajsvIzbJv1T_YVe4kTNzsgW3dpwDw"
+  },
+  "message_hex": "7665726970726f762f3100656e76656c6f70650041414543417751464267634943516f4c4441304f4478415245684d554652595847426b614778776448683800c66bca8340f073c5e46f48a273e8193d1c4b6679632ede322823a9db3201b559167a7db6269554a9eb8b6a2d8edaacd27fcf468fedc8345fcf2650e7dc203f4df9a275566841400a"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["version", "admin_token"],
+  "properties": {
+    "version": { "const": "verirelay-runtime-config/1" },
+    "admin_token": { "type": "string", "pattern": "^\\S(?:[\\s\\S]*\\S)?$" },
+    "receipt_store": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["redis", "memory"] },
+        "ttl_seconds": { "type": "integer", "minimum": 1 }
+      },
+      "if": { "properties": { "type": { "const": "redis" } } },
+      "then": { "$ref": "#/$defs/redis" },
+      "else": {
+        "properties": {
+          "max_entries": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "raw_store": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["redis", "memory"] },
+        "max_ttl_seconds": { "type": "integer", "minimum": 0 }
+      },
+      "if": { "properties": { "type": { "const": "redis" } } },
+      "then": { "$ref": "#/$defs/redis" },
+      "else": {
+        "properties": {
+          "max_bytes": { "type": "integer", "minimum": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "redis": {
+      "required": ["addr"],
+      "properties": {
+        "addr": { "type": "string", "pattern": "\\S" },
+        "tls": { "type": "boolean" },
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "db": { "type": "integer", "minimum": 0 },
+        "key_prefix": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
